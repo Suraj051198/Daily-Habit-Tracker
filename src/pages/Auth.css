@@ -1,0 +1,116 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  padding: 2rem;
+}
+
+.auth-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-blue);
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: var(--danger);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-button {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.auth-button:hover {
+  background-color: var(--primary-blue-dark);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 2rem;
+  }
+
+  .auth-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
