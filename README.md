@@ -1,3 +1,21 @@
+<img width="672" height="756" alt="image" src="https://github.com/user-attachments/assets/1f4ccebf-e435-4422-931f-98ccd042c94e" />
+
+<img width="1486" height="907" alt="image" src="https://github.com/user-attachments/assets/5e713e88-55b0-44f0-b812-6986f1723004" />
+
+<img width="1213" height="875" alt="image" src="https://github.com/user-attachments/assets/b72444e1-7763-421d-bc7d-0f5a2f40b0b5" />
+
+<img width="1907" height="814" alt="image" src="https://github.com/user-attachments/assets/a898d9ff-6265-467f-84b3-88a88f7b75fd" />
+
+<img width="1330" height="850" alt="image" src="https://github.com/user-attachments/assets/fa5d4d63-836d-4a47-836a-3399a0c23f83" />
+
+<img width="930" height="666" alt="image" src="https://github.com/user-attachments/assets/87150813-021a-432c-9a52-5962dff9197c" />
+
+<img width="620" height="829" alt="image" src="https://github.com/user-attachments/assets/e4fe4d27-9f27-4d52-a1bc-ea35cf9ba15c" />
+
+<img width="640" height="793" alt="image" src="https://github.com/user-attachments/assets/327ab382-c3f3-432f-803a-4a5379d8ab34" />
+
+
+
 # 🔥 HabitTrackr - Daily Habit & Activity Tracker
 
 A modern, responsive web application for tracking daily habits and activities. Built with React, Vite, and Chart.js.
@@ -310,8 +328,7 @@ This page shows an Excel-style table with:
 - **Sticky Column**: Habit names stay visible while scrolling through dates
 
 ---
-
-
+<img width="1918" height="587" alt="image" src="https://github.com/user-attachments/assets/50e6477f-3cc7-4aa9-85ca-3152979f9ed1" />
 
 ### 📊 Step 5: Statistics & Progress
 
@@ -367,9 +384,10 @@ Navigate to the **Stats** page from the top navigation bar.
 4. **Set Goals**: Aim to improve percentages week over week
 
 ---
-<img width="993" height="850" alt="image" src="https://github.com/user-attachments/assets/ee7d0e37-b8cc-4336-b341-525fb9ea0cfb" />
+<img width="1383" height="919" alt="image" src="https://github.com/user-attachments/assets/91abeef2-fe58-4e5c-ad30-8d55cca62f2c" />
 
-<img width="966" height="852" alt="image" src="https://github.com/user-attachments/assets/c1534376-7f45-41df-8cea-000057b456c8" />
+
+<img width="959" height="659" alt="image" src="https://github.com/user-attachments/assets/f46c0065-c62e-450d-b29a-0a47770349cf" />
 
 ### ⚙️ Step 6: Settings & Customization
 
