@@ -16,13 +16,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
+  /* keep a stable height to prevent jump when nav wraps */
+  min-height: 56px;
 }
 
 .track-header h1 {
   font-size: 2rem;
   color: var(--text-dark);
+  margin: 0;
+  /* avoid the title from pushing layout — ellipsis when it overflows */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 220px); /* leave room for the week navigation */
 }
 
 .week-navigation {
@@ -285,9 +292,26 @@
     padding: 1rem;
   }
 
+  /* stack header and keep title stable */
   .track-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+    min-height: auto;
+  }
+
+  .track-header h1 {
+    /* allow title to wrap cleanly on mobile without shifting layout */
+    white-space: normal;
+    max-width: 100%;
+    font-size: 1.6rem;
+  }
+
+  .week-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
   }
 
   .track-table {
