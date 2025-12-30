@@ -135,11 +135,16 @@ This comprehensive guide will walk you through every feature of HabitTrackr step
 4. Click **"Sign Up"** button
 5. You'll be automatically logged in and redirected to the Dashboard
 
+<img width="633" height="873" alt="image" src="https://github.com/user-attachments/assets/6be969fb-48b3-4630-accb-ad4456632913" />
+
 #### **Login to Your Account**
 
 1. On the Login page, enter your registered email and password
 2. Click **"Sign In"** button
 3. You'll be redirected to your Dashboard
+
+<img width="737" height="781" alt="image" src="https://github.com/user-attachments/assets/565ac31f-15a6-404e-afa2-e409697e3770" />
+
 
 **Note**: All accounts are stored locally in your browser. Each browser/device will have separate accounts.
 
@@ -184,6 +189,10 @@ After logging in, you'll see the **Dashboard** - your home page with an overview
 - **View All Habits**: Click on "Habits" in the navigation bar to manage all your habits
 - **Track Progress**: Click on "Track" to see the calendar view
 - **View Statistics**: Click on "Stats" to see detailed progress charts
+<img width="975" height="785" alt="image" src="https://github.com/user-attachments/assets/aed534d7-d8f8-40b3-abbb-9c7516a284d4" />
+
+<img width="886" height="790" alt="image" src="https://github.com/user-attachments/assets/05c383b4-1e0e-4d90-b03a-2d7f0442c005" />
+
 
 ---
 
@@ -222,6 +231,9 @@ Navigate to the **Habits** page from the top navigation bar.
 3. Click **"Save Habit"** button
 4. Your new habit will appear in the habits grid
 
+   <img width="515" height="818" alt="image" src="https://github.com/user-attachments/assets/13c647ab-aed8-490c-949c-13bfcaccb01b" />
+
+
 #### **Viewing Your Habits:**
 
 - All your habits are displayed as cards in a grid layout
@@ -248,6 +260,9 @@ Navigate to the **Habits** page from the top navigation bar.
 4. The habit and all its tracking data will be removed
 
 **Note**: You can add unlimited habits. There's no limit!
+
+<img width="1178" height="729" alt="image" src="https://github.com/user-attachments/assets/e4e95577-24ef-405a-9014-4db7d93e837a" />
+
 
 ---
 
@@ -295,6 +310,8 @@ This page shows an Excel-style table with:
 - **Sticky Column**: Habit names stay visible while scrolling through dates
 
 ---
+
+
 
 ### 📊 Step 5: Statistics & Progress
 
@@ -350,6 +367,9 @@ Navigate to the **Stats** page from the top navigation bar.
 4. **Set Goals**: Aim to improve percentages week over week
 
 ---
+<img width="993" height="850" alt="image" src="https://github.com/user-attachments/assets/ee7d0e37-b8cc-4336-b341-525fb9ea0cfb" />
+
+<img width="966" height="852" alt="image" src="https://github.com/user-attachments/assets/c1534376-7f45-41df-8cea-000057b456c8" />
 
 ### ⚙️ Step 6: Settings & Customization
 
@@ -420,6 +440,10 @@ Export your habit tracking data for backup or analysis:
 4. All data remains saved in your browser
 
 ---
+<img width="983" height="851" alt="image" src="https://github.com/user-attachments/assets/3aea77b5-78a3-45bc-86e1-b7265d885c81" />
+
+
+<img width="938" height="907" alt="image" src="https://github.com/user-attachments/assets/b53a0e7d-becb-4875-a247-33909958d38d" />
 
 ## 🎯 Complete Workflow Example
 
