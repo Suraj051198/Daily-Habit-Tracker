@@ -118,6 +118,19 @@
   gap: 0.5rem;
 }
 
+.all-button {
+  background-color: var(--light-gray);
+  color: var(--text-dark);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.all-button.completed {
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
 .edit-button {
   flex: 1;
   background-color: var(--light-gray);
@@ -311,6 +324,238 @@
   background-color: var(--primary-blue-dark);
 }
 
+.habits-tracking-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.habits-tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.habits-tracking-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.week-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.week-navigation button {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.week-navigation button:hover {
+  background-color: var(--light-gray);
+}
+
+.current-month {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.habits-table-wrapper {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  overflow-x: auto;
+  overflow-y: visible;
+  border: 1px solid #d0d0d0;
+}
+
+.habits-track-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* allow the table to shrink on small screens */
+  min-width: 0;
+  background-color: #f9f9f9;
+  table-layout: auto;
+  display: table;
+} 
+
+.habits-track-table thead {
+  background-color: #e8e8e8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.habits-track-table th {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-dark);
+  border: 1px solid #d0d0d0;
+  font-size: 0.9rem;
+  background-color: #e8e8e8;
+  white-space: nowrap;
+  display: table-cell;
+}
+
+.habits-track-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  background-color: var(--white);
+  white-space: nowrap;
+  display: table-cell;
+}
+
+.habits-track-table tbody tr {
+  display: table-row;
+}
+
+.habits-track-table tbody tr:hover {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+.habits-track-table .sticky-col {
+  position: sticky;
+  left: 0;
+  background-color: #e8e8e8;
+  z-index: 5;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.habits-track-table .habit-col {
+  min-width: 250px;
+  text-align: left;
+  padding-left: 1rem;
+  background-color: #e8e8e8;
+}
+
+.habits-track-table .habit-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.habits-track-table .habit-number {
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 20px;
+}
+
+.habits-track-table .habit-icon {
+  font-size: 1.2rem;
+}
+
+.habits-track-table .habit-name {
+  font-weight: 500;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.habits-track-table .goal-col {
+  min-width: 80px;
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: #e8e8e8;
+  text-align: center;
+  position: sticky;
+  left: 250px;
+  z-index: 4;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.habits-track-table .goal-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habits-track-table .day-header-col {
+  min-width: 60px;
+  max-width: 60px;
+  width: 60px;
+  padding: 0.5rem;
+  display: table-cell;
+}
+
+.habits-track-table .day-header {
+  display: block;
+  text-align: center;
+}
+
+.habits-track-table .day-date {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+.habits-track-table .day-cell {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  min-width: 60px;
+  width: 60px;
+  max-width: 60px;
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+}
+
+.habits-track-table .day-cell:hover:not(.disabled) {
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.habits-track-table .day-cell.completed {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.habits-track-table .day-cell.today {
+  background-color: rgba(74, 144, 226, 0.15);
+  border: 2px solid var(--primary-blue);
+}
+
+.habits-track-table .day-cell.disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.habits-track-table .day-cell.disabled:hover {
+  background-color: #f0f0f0;
+}
+
+.habits-track-table .day-cell.empty {
+  background-color: #f9f9f9;
+  cursor: default;
+  opacity: 0.3;
+}
+
+.habits-track-table .habit-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-blue);
+  margin: 0 auto;
+  display: block;
+}
+
+.habits-track-table .habit-checkbox:disabled {
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .habits-container {
     padding: 1rem;
@@ -328,6 +573,43 @@
 
   .modal-overlay {
     padding: 1rem;
+  }
+
+  /* Allow the table to shrink and wrap on small screens */
+  .habits-track-table {
+    font-size: 0.85rem;
+    min-width: auto;
+    table-layout: fixed; /* helps columns distribute available space */
+  }
+
+  /* Allow cells to wrap text instead of forcing horizontal overflow */
+  .habits-track-table th,
+  .habits-track-table td {
+    white-space: normal;
+  }
+
+  /* Make day columns slightly narrower on phones */
+  .habits-track-table .day-header-col {
+    min-width: 36px;
+    max-width: 36px;
+  }
+
+  .habits-track-table .day-cell {
+    min-width: 36px;
+    height: 36px;
+  }
+
+  .habits-track-table .habit-col {
+    min-width: 140px;
+  }
+
+  /* Disable sticky columns on small screens to avoid layout issues */
+  .habits-track-table .sticky-col,
+  .habits-track-table .goal-col {
+    position: static;
+    left: auto;
+    box-shadow: none;
+    z-index: auto;
   }
 }
 

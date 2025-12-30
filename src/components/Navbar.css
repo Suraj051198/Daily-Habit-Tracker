@@ -1,89 +1,323 @@
 .navbar {
   background-color: var(--white);
-  box-shadow: 0 2px 8px var(--shadow);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 0;
+  box-shadow: none;
 }
 
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--text-dark);
   text-decoration: none;
 }
 
 .logo-icon {
-  font-size: 1.8rem;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  line-height: 1;
 }
 
 .logo-text {
   letter-spacing: -0.5px;
+  color: var(--text-dark);
+  font-weight: 700;
 }
 
 .navbar-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 
 .nav-link {
   color: var(--text-dark);
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.15s ease, border-bottom-color 0.15s ease;
   font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
 }
 
 .nav-link:hover {
-  background-color: var(--light-gray);
   color: var(--primary-blue);
+  border-bottom-color: rgba(74, 144, 226, 0.2);
+  background: transparent;
 }
 
 .nav-link.active {
   color: var(--primary-blue);
-  background-color: rgba(74, 144, 226, 0.1);
+  border-bottom-color: var(--primary-blue);
+  background: transparent;
 }
 
 .profile-icon {
   font-size: 1.2rem;
 }
 
+/* Profile dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.profile-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-toggle:focus {
+  outline: 2px solid rgba(74,144,226,0.25);
+  outline-offset: 2px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--white);
+  border-radius: 6px;
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  min-width: 150px;
+  display: none;
+  z-index: 1200;
+  overflow: hidden;
+}
+
+.dropdown-menu.open {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background: rgba(74,144,226,0.04);
+  color: var(--primary-blue);
+}
+
+/* Make dropdown full-width on mobile */
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 1rem;
-  }
-
-  .navbar-logo .logo-text {
-    display: none;
-  }
-
-  .navbar-links {
-    gap: 0.5rem;
-  }
-
-  .nav-link {
-    padding: 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  .nav-link:not(.profile-icon) {
-    display: none;
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
   }
 }
 
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+    /* stack into rows on mobile */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  /* Keep the brand text visible on phones but slightly smaller and full-width */
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .navbar-logo .logo-text {
+    display: inline-block;
+    font-size: 0.95rem;
+  }
+
+  /* Make nav links compact, allow wrapping into multiple rows (2 rows of links -> header = 3 rows total) */
+  .navbar-links {
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* Each link takes ~33% width so 3 links fit per row and remaining wrap to next row */
+  .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 calc(33.333% - 0.5rem);
+    text-align: center;
+  }
+
+  /* Ensure the profile icon remains visible and reasonably sized */
+  .profile-icon {
+    font-size: 1.1rem;
+  }
+
+/* Hamburger button (hidden on desktop) */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggle .bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-dark);
+  margin: 4px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.navbar-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* If there are fewer items or on very narrow screens, allow links to expand */
+@media (max-width: 360px) {
+  .nav-link {
+    flex: 0 0 50%;
+  }
+}
+
+/* Mobile layout and collapse behavior */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.5rem 1rem;
+    /* single row containing brand and toggle */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  /* Brand row */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navbar-logo .logo-text {
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  /* Show the toggle on mobile */
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Links collapse by default and expand when .open is added with a slide-down */
+  .navbar-links {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.28s ease;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-top: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .navbar-links.open {
+    max-height: 400px; /* large enough to fit links */
+  }
+
+  .navbar-links.collapsed {
+    max-height: 0;
+  }
+
+  .navbar-links .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    text-align: left;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    white-space: normal;
+  }
+
+  .navbar-links .nav-link:hover {
+    background-color: rgba(74,144,226,0.03);
+    color: var(--primary-blue);
+  }
+
+  .navbar-links .nav-link.active {
+    background-color: rgba(74,144,226,0.06);
+  }
+
+  /* small screens: increase tap targets */
+  @media (max-width: 420px) {
+    .navbar-links .nav-link {
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .profile-icon {
+    font-size: 1.2rem;
+    margin-left: auto;
+  }
+}

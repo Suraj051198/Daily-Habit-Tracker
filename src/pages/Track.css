@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   overflow-x: auto;
+  background-color: var(--light-gray);
 }
 
 .track-content {
@@ -24,43 +25,47 @@
   color: var(--text-dark);
 }
 
-.date-range-info {
+.week-navigation {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px var(--shadow);
+  gap: 1rem;
 }
 
-.date-range,
-.info-text {
-  font-weight: 500;
-  color: var(--text-dark);
+.week-navigation button {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
   font-size: 0.9rem;
 }
 
-.total-days {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  background: var(--light-gray);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+.week-navigation button:hover {
+  background-color: var(--light-gray);
+}
+
+.current-month {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1rem;
 }
 
 .track-table-wrapper {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px var(--shadow);
   overflow-x: auto;
   overflow-y: visible;
+  border: 1px solid var(--gray);
 }
 
 .track-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px;
+  min-width: 1000px;
+  background-color: var(--white);
+  table-layout: auto;
+  display: table;
 }
 
 .track-table thead {
@@ -71,19 +76,28 @@
 }
 
 .track-table th {
-  padding: 1rem;
+  padding: 0.75rem;
   text-align: center;
   font-weight: 600;
   color: var(--text-dark);
-  border-bottom: 2px solid var(--gray);
-  font-size: 0.85rem;
+  border: 1px solid var(--gray);
+  font-size: 0.9rem;
+  background-color: var(--light-gray);
+  white-space: nowrap;
+  display: table-cell;
 }
 
 .track-table td {
-  padding: 0.75rem;
+  padding: 0.5rem;
   text-align: center;
-  border-bottom: 1px solid var(--gray);
-  border-right: 1px solid var(--gray);
+  border: 1px solid var(--gray);
+  background-color: var(--white);
+  white-space: nowrap;
+  display: table-cell;
+}
+
+.track-table tbody tr {
+  display: table-row;
 }
 
 .track-table tbody tr:hover {
@@ -93,168 +107,133 @@
 .sticky-col {
   position: sticky;
   left: 0;
-  background-color: var(--white);
+  background-color: var(--light-gray);
   z-index: 5;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 4px var(--shadow);
 }
 
 .habit-col {
-  min-width: 200px;
+  min-width: 250px;
   text-align: left;
   padding-left: 1rem;
+  background-color: var(--light-gray);
 }
 
 .habit-cell {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
+}
+
+.habit-number {
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 20px;
 }
 
 .habit-icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .habit-name {
   font-weight: 500;
   color: var(--text-dark);
+  flex: 1;
 }
 
 .goal-col {
-  min-width: 100px;
+  min-width: 80px;
   font-weight: 600;
-  color: var(--primary-blue);
+  color: var(--text-dark);
+  background-color: var(--light-gray);
+  text-align: center;
+  position: sticky;
+  left: 250px;
+  z-index: 4;
+  box-shadow: 2px 0 4px var(--shadow);
 }
 
 .goal-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.goal-progress {
-  font-size: 0.75rem;
-  color: var(--text-light);
-  font-weight: normal;
-}
-
-.day-col {
-  min-width: 60px;
-  max-width: 60px;
-}
-
-.day-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.day-number {
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.day-name {
-  font-size: 0.75rem;
-  color: var(--text-light);
-  text-transform: uppercase;
-}
-
-.day-month {
-  font-size: 0.7rem;
-  color: var(--text-light);
-  text-transform: uppercase;
-}
-
-.day-year {
-  font-size: 0.65rem;
-  color: var(--text-light);
-}
-
-.day-cell {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 1.2rem;
-  user-select: none;
-  min-width: 60px;
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.day-cell:hover {
+.day-header-col {
+  min-width: 60px;
+  max-width: 60px;
+  width: 60px;
+  padding: 0.5rem;
+  display: table-cell;
+}
+
+.day-header {
+  display: block;
+  text-align: center;
+}
+
+.day-date {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+.day-cell {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  min-width: 60px;
+  width: 60px;
+  max-width: 60px;
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+}
+
+.day-cell:hover:not(.disabled) {
   background-color: rgba(74, 144, 226, 0.1);
-  transform: scale(1.1);
 }
 
 .day-cell.completed {
-  background-color: rgba(76, 175, 80, 0.15);
+  background-color: rgba(76, 175, 80, 0.2);
 }
 
 .day-cell.today {
+  background-color: rgba(74, 144, 226, 0.15);
   border: 2px solid var(--primary-blue);
-  border-radius: 4px;
-}
-
-.day-cell.past {
-  opacity: 0.7;
 }
 
 .day-cell.disabled {
   background-color: var(--light-gray);
   cursor: not-allowed;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .day-cell.disabled:hover {
   background-color: var(--light-gray);
-  transform: none;
 }
 
 .day-cell.empty {
-  background-color: transparent;
-  border: none;
+  background-color: var(--light-gray);
+  cursor: default;
+  opacity: 0.3;
 }
 
-.day-cell.future {
-  background-color: #fff3cd;
+.habit-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-blue);
+  margin: 0 auto;
+  display: block;
+}
+
+.habit-checkbox:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.day-cell.future:hover {
-  background-color: #fff3cd;
-  transform: none;
-}
-
-.track-legend {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem;
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px var(--shadow);
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-dark);
-}
-
-.legend-box {
-  font-size: 1.2rem;
-  display: inline-block;
-}
-
-.legend-box.today {
-  border: 2px solid var(--primary-blue);
-  border-radius: 4px;
-  padding: 2px;
 }
 
 .empty-state {
@@ -265,6 +244,40 @@
   box-shadow: 0 2px 8px var(--shadow);
   color: var(--text-light);
   font-size: 1.1rem;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .track-table {
+  background-color: var(--white);
+}
+
+[data-theme="dark"] .track-table thead {
+  background-color: var(--light-gray);
+}
+
+[data-theme="dark"] .track-table th {
+  background-color: var(--light-gray);
+  border-color: var(--gray);
+}
+
+[data-theme="dark"] .sticky-col {
+  background-color: var(--light-gray);
+}
+
+[data-theme="dark"] .habit-col {
+  background-color: var(--light-gray);
+}
+
+[data-theme="dark"] .goal-col {
+  background-color: var(--light-gray);
+}
+
+[data-theme="dark"] .day-cell.disabled {
+  background-color: var(--gray);
+}
+
+[data-theme="dark"] .day-cell.empty {
+  background-color: var(--gray);
 }
 
 @media (max-width: 768px) {
@@ -279,21 +292,21 @@
 
   .track-table {
     font-size: 0.85rem;
+    min-width: 800px;
   }
 
-  .day-col {
-    min-width: 50px;
-    max-width: 50px;
+  .day-header-col {
+    min-width: 40px;
+    max-width: 40px;
   }
 
   .day-cell {
-    min-width: 50px;
-    height: 50px;
-    font-size: 1rem;
+    min-width: 40px;
+    height: 40px;
   }
 
   .habit-col {
-    min-width: 150px;
+    min-width: 200px;
   }
 }
 

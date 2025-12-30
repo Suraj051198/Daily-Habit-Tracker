@@ -118,6 +118,18 @@ export const toggleTracking = (userId, habitId, date, completed) => {
   })
 }
 
+// Set tracking for multiple dates (useful for marking all days completed/uncompleted)
+export const setTrackingForDates = (userId, habitId, dates = [], completed) => {
+  dates.forEach(dateStr => {
+    saveTracking({
+      userId,
+      habitId,
+      date: dateStr,
+      completed
+    })
+  })
+}
+
 // Theme Management
 export const getTheme = () => {
   return localStorage.getItem(STORAGE_KEYS.THEME) || 'light'

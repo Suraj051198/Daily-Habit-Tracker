@@ -14,9 +14,9 @@ const Habits = ({ user }) => {
     reminderTime: ''
   })
 
+
   const categories = ['Health', 'Study', 'Finance', 'Personal', 'Fitness', 'Work']
   const icons = ['🔥', '☕', '📚', '🧘', '🏋️', '💧', '🌅', '📖', '🎯', '💪', '🧠', '❤️', '📝', '🎨', '🎵']
-
   useEffect(() => {
     loadHabits()
   }, [])
@@ -80,6 +80,7 @@ const Habits = ({ user }) => {
     }
   }
 
+
   return (
     <div className="habits-container">
       <div className="habits-content">
@@ -98,6 +99,7 @@ const Habits = ({ user }) => {
             </button>
           </div>
         ) : (
+          <>
           <div className="habits-grid">
             {habits.map(habit => (
               <div key={habit.id} className="habit-card">
@@ -129,6 +131,7 @@ const Habits = ({ user }) => {
               </div>
             ))}
           </div>
+          </>
         )}
       </div>
 
